@@ -52,6 +52,8 @@ group :development, :test do
 
   gem 'rails-controller-testing'
 
+  gem "devise", "~> 4.9"
+
 end
 
 group :development do
