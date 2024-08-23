@@ -12,14 +12,15 @@
   </head>
 
   <body class="bg-zinc-900">
-    <div class="flex w-full items-center justify-around p-8 bg-zinc-900">
+    <div class="flex w-full items-center justify-around p-8">
       <div>
         <h1 class="text-3xl font-semibold text-white"><span class="text-green-400">eBook</span>Platform</h1>
       </div>
       <div>
-        <ul class="flex">
-          <li class="p-2 text-white">Entrar</li>
-          <li class="p-2 text-white">Cadastre-se</li>
+        <ul class="flex z-50">
+            <%= link_to 'Entrar', root_path, class: "p-2 text-white cursor-pointer" %>
+            <%= link_to 'Ser Leitor', root_path, class: "p-2 text-green-400 font-semibold rounded-lg ml-5 cursor-pointer" %>
+            <%= link_to 'Ser Escritor', root_path, class: "p-2 text-white font-semibold bg-green-400 rounded-lg ml-5 cursor-pointer" %>
         </ul>
       </div>
     </div>
