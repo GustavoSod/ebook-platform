@@ -1,24 +1,29 @@
-# README
+# Ebook Platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+platform to encourage reading, readers can download ebooks and writers can post their books. Remember 100% free
 Things you may want to cover:
 
-* Ruby version
+## Dependencies
 
-* System dependencies
+- [Ruby    3.3.1](https://www.ruby-lang.org/pt/downloads/)
+- [Rails    7.1.3](https://rubyonrails.org)
 
-* Configuration
 
-* Database creation
+## Setup
 
-* Database initialization
+use this command to generate .env and fill them with your data:
 
-* How to run the test suite
+```
+cp .env.example .env
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
 
-* ...
+build your application:
+
+```
+docker compose up
+```
+
+
+You can now access the application by navigating to [localhost:3000](http://localhost:3000) in your browser.
