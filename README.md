@@ -1,7 +1,6 @@
 # Ebook Platform
 
-platform to encourage reading, readers can download ebooks and writers can post their books. Remember 100% free
-Things you may want to cover:
+Platform to encourage reading, readers can download ebooks and writers can post their books. Remember 100% free.
 
 ## Dependencies
 
@@ -15,7 +14,6 @@ use this command to generate .env and fill them with your data:
 
 ```
 cp .env.example .env
-
 ```
 
 
@@ -24,6 +22,5 @@ build your application:
 ```
 docker compose up
 ```
-
 
 You can now access the application by navigating to [localhost:3000](http://localhost:3000) in your browser.
