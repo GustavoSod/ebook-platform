@@ -23,4 +23,10 @@ build your application:
 docker compose up
 ```
 
+create your database:
+
+```
+docker compose run web bin/rails db:create
+```
+
 You can now access the application by navigating to [localhost:3000](http://localhost:3000) in your browser.
