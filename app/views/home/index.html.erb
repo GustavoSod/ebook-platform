@@ -3,7 +3,7 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   </head>
   <body>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.writer? %>
       <%= render 'homelogged' %>
     <% else %> 
       <%= render 'homenologged' %>
