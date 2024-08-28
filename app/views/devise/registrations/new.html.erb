@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full items-center justify-center h-[60vh]">
+<div class="flex flex-col w-full items-center justify-center h-[70vh]">
   <h2 class="text-green-400 text-4xl font-semibold mb-10">Cadastre-se</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html:{class:"w-[40%]"}) do |f| %>
@@ -17,10 +17,29 @@
     <%= f.password_field :password, autocomplete: "new-password", placeholder:"Digite sua senha", class:"bg-zinc-600 rounded-lg w-full p-4" %>
   </div>
 
-  <div class="field mb-10">
+  <div class="field mb-4">
     <%= f.label :password_confirmation, class:"text-white" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirme sua senha", class:"bg-zinc-600 rounded-lg w-full p-4" %>
   </div>
+  
+  <div class="mb-10">
+      <%= f.label :role, 'Quer ser um Leitor ou Escritor?', class:"text-white" %><br />
+      <div class="flex gap-4 mt-2">
+        <label class="cursor-pointer">
+          <%= f.radio_button :role, 'writer', class: "hidden peer" %>
+          <div class="peer-checked:bg-green-400 peer-checked:text-white bg-zinc-600 rounded-lg p-4 text-center text-white">
+            Escritor
+          </div>
+        </label>
+
+        <label class="cursor-pointer">
+          <%= f.radio_button :role, 'reader', class: "hidden peer" %>
+          <div class="peer-checked:bg-green-400 peer-checked:text-white bg-zinc-600 rounded-lg p-4 text-center text-white">
+            Leitor
+          </div>
+        </label>
+      </div>
+    </div>
 
   <div class="actions bg-green-400 rounded-lg p-4 flex items-center justify-center mb-4">
     <%= f.submit "Cadastre-se", class:"text-white" %>
