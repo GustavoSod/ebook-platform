@@ -6,7 +6,7 @@
 
   <div class="field mb-4">
     <%= f.label :email, class:"text-white" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"bg-zinc-600 rounded-lg w-full p-4" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Digite seu email", class:"bg-zinc-600 rounded-lg w-full p-4" %>
   </div>
 
   <div class="field mb-4">
@@ -14,16 +14,16 @@
     <% if @minimum_password_length %>
     <em class="text-white">(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:"bg-zinc-600 rounded-lg w-full p-4" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Digite sua senha", class:"bg-zinc-600 rounded-lg w-full p-4" %>
   </div>
 
   <div class="field mb-10">
     <%= f.label :password_confirmation, class:"text-white" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"bg-zinc-600 rounded-lg w-full p-4" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirme sua senha", class:"bg-zinc-600 rounded-lg w-full p-4" %>
   </div>
 
   <div class="actions bg-green-400 rounded-lg p-4 flex items-center justify-center mb-4">
-    <%= f.submit "Sign up", class:"text-white" %>
+    <%= f.submit "Cadastre-se", class:"text-white" %>
   </div>
 
   <div class="w-full">
