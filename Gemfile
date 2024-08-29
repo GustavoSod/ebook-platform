@@ -52,6 +52,8 @@ group :development, :test do
 
   gem 'rails-controller-testing'
 
+  gem 'factory_bot_rails'
+
 end
 
 group :development do
@@ -67,3 +69,5 @@ end
 
 
 gem "tailwindcss-rails", "~> 2.7"
+
+gem "devise", "~> 4.9"
