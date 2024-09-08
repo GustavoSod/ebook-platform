@@ -1,8 +1,8 @@
-<div class="flex flex-col w-full items-center justify-center h-[60vh]">
+<div class="flex flex-col w-full items-center justify-center xl:h-[65vh] mt-14">
 
   <h2 class="text-green-400 text-4xl font-semibold mb-10">Mude sua senha</h2>
 
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class:"w-[40%]" }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class:"xl:w-[40%] w-[80%]" }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <%= f.hidden_field :reset_password_token %>
 

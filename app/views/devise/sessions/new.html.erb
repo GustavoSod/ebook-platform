@@ -1,7 +1,7 @@
-<div class="flex flex-col w-full items-center justify-center h-[60vh]">
+<div class="flex flex-col w-full items-center justify-center xl:h-[60vh] mt-14">
   <h2 class="text-green-400 text-4xl font-semibold mb-10">Entre para ler</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{class:"w-[40%]"}) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{class:"xl:w-[40%] w-[80%]"}) do |f| %>
     <div class="field mb-4">
       <%= f.label :email, class:"text-white" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Digite seu email", class:"bg-zinc-600 rounded-lg w-full p-4" %>
