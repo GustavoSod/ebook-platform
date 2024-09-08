@@ -2,34 +2,61 @@
 <html>
   <head>
     <title>EbookPlatform</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
   </head>
 
   <body class="bg-zinc-900">
-    <div class="flex w-full items-center justify-around p-8">
+    <div class="flex w-full items-center justify-between p-8">
       <div>
-        <h1 class="text-3xl font-semibold text-white"><span class="text-green-400">eBook</span>Platform</h1>
+        <h1 class="text-3xl font-semibold text-white">
+          <span class="text-green-400">eBook</span>Platform
+        </h1>
       </div>
-      <div>
-        <ul class="flex z-50">
-            <% if user_signed_in? %>
-              <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "p-2 text-white font-semibold bg-green-400 rounded-lg ml-5 cursor-pointer" %>
-            <% else %>
-              <%= link_to 'Entrar', new_user_session_path, class: "p-2 text-white cursor-pointer" %>
-              <%= link_to 'Cadastre-se', new_user_registration_path, class: "p-2 text-white font-semibold bg-green-400 rounded-lg ml-5 cursor-pointer" %>
-            <% end %>
+
+      <div class="hidden md:flex">
+        <ul class="flex">
+          <% if user_signed_in? %>
+            <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "p-2 text-white font-semibold bg-green-400 rounded-lg ml-5 cursor-pointer" %>
+          <% else %>
+            <%= link_to 'Entrar', new_user_session_path, class: "p-2 text-white cursor-pointer" %>
+            <%= link_to 'Cadastre-se', new_user_registration_path, class: "p-2 text-white font-semibold bg-green-400 rounded-lg ml-5 cursor-pointer" %>
+          <% end %>
         </ul>
       </div>
+
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-white">MENU</button>
+      </div>
     </div>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-zinc-800 p-4">
+      <ul class="flex flex-col items-start justify-center items-center">
+        <% if user_signed_in? %>
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "block p-2 text-white font-semibold bg-green-400 rounded-lg mt-2 w-[70%] text-center" %>
+        <% else %>
+          <%= link_to 'Entrar', new_user_session_path, class: "block p-2 text-white cursor-pointer mt-2 w-[70%] text-center" %>
+          <%= link_to 'Cadastre-se', new_user_registration_path, class: "block p-2 text-white font-semibold bg-green-400 rounded-lg mt-2 w-[70%] text-center" %>
+        <% end %>
+      </ul>
+    </div>
+
     <%= yield %>
+
     <div class="flex w-full items-center justify-around p-8 bg-zinc-950 mt-40 h-[250px]">
-      <h1 class="text-3xl font-semibold text-white"><span class="text-green-400">eBook</span>Platform</h1>
+      <h1 class="text-3xl font-semibold text-white">
+        <span class="text-green-400">eBook</span>Platform
+      </h1>
       <p class="text-base text-white">@todosdireitosreservados</p>
       <p class="text-base text-white">eBookPlatform@contato.com</p>
     </div>
