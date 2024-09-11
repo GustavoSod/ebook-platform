@@ -3,47 +3,47 @@
         <%= image_tag("ebook.jpg", alt: "rss feed", class: "object-cover w-full h-full") %>
         <div class="absolute inset-0 bg-black opacity-70"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center" data-aos="fade">
-          <h1 class="text-white text-6xl font-semibold mb-5">
+          <h1 class="text-white text-justify	 md:text-6xl sm:text-5xl text-3xl font-semibold mb-5">
             <span class="text-green-400 font-bold">eBooks</span> 100% gratuitos
           </h1>
-          <p class= "text-white text-xl text-center leading-8">
+          <p class= "text-white sm:text-xl text-base text-center leading-8">
             Plataforma ideal para lançar seus próprios <br> eBooks e baixar de outros criadores. Tudo isso 100% gratuito
           </p>
         </div>
       </div>
-      <div class="flex flex-row w-[70%] items-center justify-around" data-aos="fade-right">
-        <h2 class= "text-white text-5xl font-bold ml-20">Lance seus eBooks <br><span class="text-green-400">rapidamente</span> </h2>
+      <div class="flex lg:flex-row flex-col w-[70%] items-center justify-around lg:mt-0 mt-20" data-aos="fade-right">
+        <h2 class= "text-white sm:text-5xl text-3xl font-bold lg:ml-20 ml-0">Lance seus eBooks <br><span class="text-green-400">rapidamente</span> </h2>
         <%= image_tag("bookanimation.png", alt: "rss feed", class: "w-[500px]") %>
       </div>
-      <div class="flex flex-row w-[70%] items-center justify-around" data-aos="fade-left">
-        <h2 class= "text-white text-5xl font-bold ml-20">Leia os eBooks <br> dos <span class="text-green-400">nossos criadores</span></h2>
+      <div class="flex lg:flex-row flex-col w-[70%] items-center justify-around" data-aos="fade-left">
+        <h2 class= "text-white sm:text-5xl text-3xl font-bold lg:ml-20 ml-0">Leia os eBooks <br> dos <span class="text-green-400">nossos criadores</span></h2>
         <%= image_tag("reading.png", alt: "rss feed", class: "w-[500px]") %>
       </div>
     </div>
 
     <div class="bg-green-500 flex flex-row justify-around items-center p-8 w-full mt-32">
-      <h1 class="text-white text-3xl font-semibold" data-aos="fade">+ 250.000 downloads</h1>
-      <h1 class="text-white text-3xl font-semibold" data-aos="fade">+ 150.000 usuarios</h1>
-      <h1 class="text-white text-3xl font-semibold" data-aos="fade">+ 5.000 eBooks</h1>
+      <h1 class="text-white sm:text-3xl text-base font-semibold" data-aos="fade">+ 250.000 downloads</h1>
+      <h1 class="text-white sm:text-3xl text-base font-semibold" data-aos="fade">+ 150.000 usuarios</h1>
+      <h1 class="text-white sm:text-3xl text-base font-semibold" data-aos="fade">+ 5.000 eBooks</h1>
     </div>
 
-    <div class="w-full mt-36">
-      <h2 class="text-white text-5xl font-semibold text-center">Benefícios</h2>
-      <div class="w-full flex flex-row justify-around mt-28" data-aos="fade">
-        <div class="flex flex-col items-center justify-center">
+    <div class="w-full md:mt-36 mt-20">
+      <h2 class="text-white md:text-5xl text-3xl font-semibold text-center">Benefícios</h2>
+      <div class="w-full flex md:flex-row flex-col justify-around md:items-start items-center md:mt-28 mt-20" data-aos="fade">
+        <div class="flex flex-col items-center justify-center md:mb-0 mb-14">
           <div class="bg-zinc-950 p-10 rounded-lg"><%= image_tag("money.png", alt: "rss feed", class: "w-[120px]") %></div>
           <p class="text-white mt-5">100% Gratuito</p>
-          <p class="text-white mt-5 text-center">Nós da eBookPLatform presamos<br>  pela liberdade de expressão, por isso<br>  acreditamos que a leitura deve ser gratuita</p>
+          <p class="text-white w-[70%] mt-5 text-center">Nós da eBookPLatform presamos<br>  pela liberdade de expressão, por isso<br>  acreditamos que a leitura deve ser gratuita</p>
         </div>
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center md:mb-0 mb-14">
           <div class="bg-zinc-950 p-10 rounded-lg"><%= image_tag("cadeado.png", alt: "rss feed", class: "w-[120px]") %></div>
           <p class="text-white mt-5">Downloads Seguros</p>
-          <p class="text-white mt-5 text-center">A eBookPLatform garante<br>  sua segurança, antes de qualquer<br> publicação,  o arquivo é analisado por nossos leitores</p>
+          <p class="text-white mt-5 text-center w-[70%]">A eBookPLatform garante<br>  sua segurança, antes de qualquer<br> publicação,  o arquivo é analisado por nossos leitores</p>
         </div>
         <div class="flex flex-col items-center justify-center">
           <div class="bg-zinc-950 p-10 rounded-lg"><%= image_tag("atualizada.png", alt: "rss feed", class: "w-[120px] pl-2") %></div>
           <p class="text-white mt-5">eBooks Atualizados</p>
-          <p class="text-white mt-5 text-center">Escritores que querem mudar<br> o mundo da leitura, sempre disponibilizando<br> seus ebooks para compartlihar conhecimento<br> com o público</p>
+          <p class="text-white mt-5 text-center w-[70%]">Escritores que querem mudar<br> o mundo da leitura, sempre disponibilizando<br> seus ebooks para compartlihar conhecimento<br> com o público</p>
         </div>
       </div>
 </div>
