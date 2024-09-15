@@ -1,0 +1,28 @@
+<div id="<%= dom_id book %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= book.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= book.user_id %>
+  </p>
+
+  <p>
+  <strong>PDF:</strong>
+  <%= link_to "Download PDF", book.pdf.url if book.pdf.present? %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag book.image.url if book.image.present? %>
+</p>
+
+
+</div>
