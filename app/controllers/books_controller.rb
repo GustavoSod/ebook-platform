@@ -1,9 +1,14 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :authenticate_writer!, only: %i[new create edit update destroy]
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+    if current_user&.writer?
+      @books = current_user.books
+    else
+      @books = Book.all
+    end
   end
 
   # GET /books/1 or /books/1.json
@@ -17,11 +22,12 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    @book = current_user.books.build(book_params)
   end
 
   # POST /books or /books.json
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.build(book_params)
 
     respond_to do |format|
       if @book.save
@@ -36,6 +42,8 @@ class BooksController < ApplicationController
 
   # PATCH/PUT /books/1 or /books/1.json
   def update
+    @book = current_user.books.build(book_params)
+
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
@@ -63,6 +71,12 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
+    def authenticate_writer!
+      unless current_user&.writer?
+        redirect_to books_path, alert: "You do not have permission to perform this action."
+      end
+    end
+    
     # Only allow a list of trusted parameters through.
     def book_params
       params.require(:book).permit(:title, :description, :author, :user_id)
