@@ -22,7 +22,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
-    @book = current_user.books.build(book_params)
+    @book = current_user.books.find(params[:id])
   end
 
   # POST /books or /books.json
@@ -42,8 +42,6 @@ class BooksController < ApplicationController
 
   # PATCH/PUT /books/1 or /books/1.json
   def update
-    @book = current_user.books.build(book_params)
-
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
