@@ -28,6 +28,7 @@ class BooksController < ApplicationController
   # POST /books or /books.json
   def create
     @book = current_user.books.build(book_params)
+    @book.author = current_user.email
 
     respond_to do |format|
       if @book.save

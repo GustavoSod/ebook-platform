@@ -6,10 +6,10 @@
 
     <%= render @book %>
 
-    <%= link_to "Edit this book", edit_book_path(@book), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to books", books_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Editar", edit_book_path(@book), class: "mt-2 rounded-lg py-3 px-5 bg-green-400 text-white inline-block font-medium" %>
+    <%= link_to "Voltar", books_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
-      <%= button_to "Destroy this book", @book, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to "Deletar Livro", @book, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-600 text-white font-medium" %>
     </div>
   </div>
 </div>
