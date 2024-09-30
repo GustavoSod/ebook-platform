@@ -1,0 +1,44 @@
+<div class="flex flex-col items-center w-full min-h-[70vh]">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <% content_for :title, "Books" %>
+
+  <% if current_user&.writer? %>
+    <div class="w-full flex flex-col items-center">
+      <div class="flex justify-between items-center mt-14 w-full mb-24 md:w-[80%] w-[90%] p-6 rounded-lg">
+        <h1 class="font-bold text-4xl text-white">Seus livros</h1>
+        <%= link_to "Criar", new_book_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium bg-green-400" %>
+      </div>
+
+      <div id="books" class="flex justify-evenly flex-wrap w-[85%]">
+        <% @books.each do |book| %>
+          <%= link_to book do %>
+            <div class="bg-stone-800 border-stone-900 border rounded-lg p-14 mb-14 ml-4">
+              <%= render book %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+
+    <div class="w-full flex flex-col items-center">
+      <div class="flex items-center mt-14 w-full mb-24 border-stone-800 border-2 md:w-[80%] w-[90%] p-6 rounded-lg">
+        <h1 class="font-bold text-4xl text-white">Nossos livros <span class="text-green-400">disponíveis</span></h1>
+      </div>
+    </div>
+
+    <div id="books" class="flex justify-evenly flex-wrap w-[85%]">
+        <% @books.each do |book| %>
+          <%= link_to book do %>
+            <div class="bg-stone-800 border-stone-900 border rounded-lg p-14 mb-14 ml-4">
+              <%= render book %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

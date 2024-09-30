@@ -1,0 +1,30 @@
+<div class="flex flex-col items-center w-full min-h-[70vh] ">
+  <div class="flex flex-col min-h-[70vh] justify-center">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= render @book %>
+
+  <% if current_user&.writer? %>
+    <div>
+      <%= link_to edit_book_path(@book), class: "mt-2 rounded-lg py-3 px-5 bg-green-400 text-white inline-block font-medium" do %>
+        <i class="fa-solid fa-pen"></i>
+      <% end %>
+      
+      <%= link_to "Voltar", books_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+      <div class="inline-block ml-2">
+        <%= button_to @book, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-600 text-white font-medium" do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to "Voltar", books_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </div>
+  <% end %>
+  
+  </div>
+</div>
